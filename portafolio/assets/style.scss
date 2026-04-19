@@ -1,0 +1,36 @@
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h1{
+        color: aqua;
+
+    }
+}
+
+.menu-checkbox {
+    display: none; // Escondemos el checkbox real
+}
+
+.menu-list {
+    display: none; // El menú está oculto por defecto
+    list-style: none;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+// "Cuando el checkbox esté marcado (+), el hermano .menu-list se muestra"
+.menu-checkbox:checked + .menu-button + .menu-list {
+    display: block;
+}
+
+.menu-button {
+    cursor: pointer;
+    background: #333;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: inline-block;
+}

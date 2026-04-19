@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets\style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Brayan David Lozada Chaparro
+        </h1>
+        <nav>
+            <div class="menu-container">
+                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    
+                <label for="menu-toggle" class="menu-button">
+                    ☰ Abrir Menú
+                </label>
+
+                <ul class="menu-list">
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="mascotas.html">Mascotas</a></li>
+                </ul>
+            </div>
+        </nav>
+</header>
+
+    <main>
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>
+                Especialista en metodologías de call center y desarrollo de sistemas 
+                de gestión de inventarios. Enfocado en la optimización de procesos 
+                y la integración de soluciones tecnológicas.
+            </p>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <ul>
+                <li><a href="#">Inventory Management System S3</a></li>
+                <li><a href="#">Call Analysis Framework</a></li>
+                <li><a href="#">AI Sales Agent Implementation</a></li>
+            </ul>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="#" method="POST">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje"></textarea>
+                </div>
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

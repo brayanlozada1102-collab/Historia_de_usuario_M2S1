@@ -1,0 +1,34 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header h1 {
+  color: aqua;
+}
+
+.menu-checkbox {
+  display: none;
+}
+
+.menu-list {
+  display: none;
+  list-style: none;
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+.menu-checkbox:checked + .menu-button + .menu-list {
+  display: block;
+}
+
+.menu-button {
+  cursor: pointer;
+  background: #333;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+/*# sourceMappingURL=style.css.map */
