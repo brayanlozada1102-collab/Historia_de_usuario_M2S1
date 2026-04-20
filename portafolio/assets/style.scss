@@ -1,15 +1,30 @@
-
-header{
+body{
+    margin: 0px;
+}
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    background-color: azure;
+    margin: 0px;
+    padding: 0px;
+    gap: 0px;
 
-    h1{
-        color: aqua;
+    nav{
+        margin: 5px;
+    }
+
+
+    h1 {
+        margin: 5px;
 
     }
+    
 }
-
+hr{
+    margin: 0px;
+}
 .menu-checkbox {
     display: none; // Escondemos el checkbox real
 }
@@ -22,7 +37,7 @@ header{
 }
 
 // "Cuando el checkbox esté marcado (+), el hermano .menu-list se muestra"
-.menu-checkbox:checked + .menu-button + .menu-list {
+.menu-checkbox:checked+.menu-button+.menu-list {
     display: block;
 }
 
