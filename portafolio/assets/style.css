@@ -6,17 +6,21 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   background-color: azure;
   margin: 0px;
   padding: 0px;
   gap: 0px;
+  height: 55px;
 }
 header nav {
   margin: 5px;
 }
 header h1 {
   margin: 5px;
+}
+header div ul li a {
+  text-decoration: none;
+  color: #333;
 }
 
 hr {
