@@ -11,13 +11,6 @@ body {
   color: #333333;
 }
 
-hr {
-  margin: 0;
-  border: 0;
-  height: 1px;
-  background-color: #ddd;
-}
-
 header {
   background-color: #8C1AF6;
   color: #ffffff;
@@ -198,6 +191,7 @@ footer {
 }
 
 #info-extra {
+  display: none;
   background-color: rgba(140, 26, 246, 0.05);
   border-left: 4px solid #8C1AF6;
   padding: 15px;

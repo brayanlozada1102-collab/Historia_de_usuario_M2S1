@@ -1,6 +1,6 @@
-// 1. VARIABLES (Colores coherentes con la página de mascotas)
-$color-primario: #8C1AF6; // Morado Riwi
-$color-secundario: #333333; // Gris oscuro para botones
+// 1. Variables base
+$color-primario: #8C1AF6;
+$color-secundario: #333333;
 $color-fondo-gris: #f4f4f4;
 $color-blanco: #ffffff;
 $sombra-suave: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -8,7 +8,7 @@ $fuente: 'Segoe UI', Tahoma, Verdana, sans-serif;
 $color-btn-hover: #57109c;
 
 
-// 2. RESET Y MODELO DE CAJA
+// 2. Configuración Global
 * {
     margin: 0;
     padding: 0;
@@ -22,14 +22,7 @@ body {
     color: $color-secundario;
 }
 
-hr {
-    margin: 0;
-    border: 0;
-    height: 1px;
-    background-color: #ddd;
-}
-
-// 3. ENCABEZADO Y NAVEGACIÓN (Tu lógica mejorada)
+// 3. ENCABEZADO Y NAVEGACIÓN
 header {
     background-color: $color-primario;
     color: $color-blanco;
@@ -47,14 +40,14 @@ header {
     nav {
         .menu-container {
             .menu-checkbox {
-                display: none; // Escondemos el checkbox
+                display: none;
             }
 
             .menu-button {
                 cursor: pointer;
                 background: $color-secundario;
                 color: $color-blanco;
-                border-radius: 10px; // Requisito: Bordes redondeados
+                border-radius: 10px;
                 padding: 10px 25px;
                 display: inline-block;
                 transition: transform 0.2s;
@@ -66,7 +59,7 @@ header {
             }
 
             .menu-list {
-                display: none; // Oculto por defecto
+                display: none;
                 list-style: none;
                 background-color: $color-fondo-gris;
                 padding: 20px;
@@ -85,13 +78,13 @@ header {
 
                         &:hover {
                             color: $color-secundario;
-                            text-decoration: underline; // Requisito: Hover
+                            text-decoration: underline;
                         }
                     }
                 }
             }
 
-            // Selector mejorado para tu lógica del checkbox
+            
             .menu-checkbox:checked+.menu-button+.menu-list {
                 display: block;
             }
@@ -102,7 +95,7 @@ header {
 // 4. SECCIONES PRINCIPALES
 main {
     max-width: 900px;
-    margin: 0 auto; // Centrado horizontal
+    margin: 0 auto;
     padding: 20px;
 }
 
@@ -128,24 +121,24 @@ section {
         text-align: justify;
         background: $color-fondo-gris;
         padding: 20px;
-        border-radius: 15px; // Bordes redondeados
+        border-radius: 15px;
     }
 }
 
-// 6. PROYECTOS (Grid sencillo)
+// 6. PROYECTOS
 #proyectos {
     ul {
         list-style: none;
         display: grid;
         align-items: center;
-        grid-template-columns: repeat(3, 1fr); // 3 columnas fijas
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
 
         li {
             .project-img {
                 width: 100%;
                 height: 200px;
-                object-fit: cover; // Ajusta la imagen sin deformarla
+                object-fit: cover;
                 margin-bottom: 10px;
                 box-shadow: $sombra-suave;
                 border-radius: 10px;
@@ -233,20 +226,20 @@ footer {
     background-color: $color-primario;
     color: $color-blanco;
     border: none;
-    border-radius: 50px; // Requisito: Bordes muy redondeados (estilo cápsula)
+    border-radius: 50px;
     font-weight: 600;
     font-family: inherit;
     font-size: 1rem;
     cursor: pointer;
 
     // 3. Efectos Visuales (Sombras y Transiciones)
-    box-shadow: $sombra-suave; // Requisito: Sombra
-    transition: all 0.3s ease; // Para que el cambio de color sea suave
+    box-shadow: $sombra-suave; 
+    transition: all 0.3s ease; 
 
-    // 4. Hover (Requisito Tarea 4)
+    // 4. Hover
     &:hover {
         background-color: $color-btn-hover;
-        transform: translateY(-2px); // Pequeño salto hacia arriba
+        transform: translateY(-2px); 
         box-shadow: $sombra-suave;
     }
 
@@ -255,15 +248,15 @@ footer {
         transform: translateY(0);
     }
 }
-
-// Estilo para el contenedor de información extra que aparece con JS
+//Boton en Js
 #info-extra {
-    background-color: rgba(140, 26, 246, 0.05); // Un morado muy tenue
+    display: none;
+    background-color: rgba(140, 26, 246, 0.05); 
     border-left: 4px solid $color-primario;
     padding: 15px;
     margin-top: 15px;
     border-radius: 8px;
-    animation: fadeIn 0.5s ease; // Animación de entrada
+    animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
@@ -280,11 +273,11 @@ footer {
 
 @media (max-width: 768px) {
     main {
-        padding: 15px; // Reducimos espacio lateral
+        padding: 15px; 
     }
 
     #proyectos ul {
-        grid-template-columns: repeat(2, 1fr); // Requisito: 2 columnas
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     header h1 {
@@ -296,7 +289,7 @@ footer {
         padding: 2rem 1rem;
         
         nav .menu-list {
-            flex-direction: column; // Requisito: Menú en columna
+            flex-direction: column; 
             width: 100%;
             align-items: center;
             
@@ -309,15 +302,15 @@ footer {
     }
 
     #proyectos ul {
-        grid-template-columns: 1fr; // Requisito: 1 sola columna
+        grid-template-columns: 1fr; 
     }
 
-    // Ajuste de imágenes para móviles
+    
     .project-img {
         height: 140px; 
     }
 
     #sobre-mi p {
-        text-align: left; // Más legible en pantallas angostas
+        text-align: left; 
     }
 }
