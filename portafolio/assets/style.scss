@@ -1,67 +1,323 @@
-body {
-    margin: 0px;
+// 1. VARIABLES (Colores coherentes con la página de mascotas)
+$color-primario: #8C1AF6; // Morado Riwi
+$color-secundario: #333333; // Gris oscuro para botones
+$color-fondo-gris: #f4f4f4;
+$color-blanco: #ffffff;
+$sombra-suave: 0 4px 10px rgba(0, 0, 0, 0.1);
+$fuente: 'Segoe UI', Tahoma, Verdana, sans-serif;
+$color-btn-hover: #57109c;
+
+
+// 2. RESET Y MODELO DE CAJA
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: $fuente;
+    line-height: 1.6;
+    background-color: $color-blanco;
+    color: $color-secundario;
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+}
+
+// 3. ENCABEZADO Y NAVEGACIÓN (Tu lógica mejorada)
 header {
+    background-color: $color-primario;
+    color: $color-blanco;
+    padding: 3rem 1rem;
+    text-align: center;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    background-color: azure;
-    margin: 0px;
-    padding: 0px;
-    gap: 0px;
-    height: 55px;
-
-    nav {
-        margin: 5px;
-    }
-
+    height: 150px;
 
     h1 {
-        margin: 5px;
+        margin-bottom: 1.5rem;
+        font-size: 2.2rem;
     }
 
-    div {
-        ul {
-            li {
-                a {
-                    text-decoration: none;
-                    color: #333;
+    nav {
+        .menu-container {
+            .menu-checkbox {
+                display: none; // Escondemos el checkbox
+            }
+
+            .menu-button {
+                cursor: pointer;
+                background: $color-secundario;
+                color: $color-blanco;
+                border-radius: 10px; // Requisito: Bordes redondeados
+                padding: 10px 25px;
+                display: inline-block;
+                transition: transform 0.2s;
+
+                &:hover {
+                    background: #555;
+                    transform: scale(1.05);
                 }
+            }
+
+            .menu-list {
+                display: none; // Oculto por defecto
+                list-style: none;
+                background-color: $color-fondo-gris;
+                padding: 20px;
+                margin-top: 15px;
+                border-radius: 12px;
+                box-shadow: $sombra-suave;
+
+                li {
+                    margin: 10px 0;
+
+                    a {
+                        text-decoration: none;
+                        color: $color-primario;
+                        font-weight: bold;
+                        transition: color 0.3s;
+
+                        &:hover {
+                            color: $color-secundario;
+                            text-decoration: underline; // Requisito: Hover
+                        }
+                    }
+                }
+            }
+
+            // Selector mejorado para tu lógica del checkbox
+            .menu-checkbox:checked+.menu-button+.menu-list {
+                display: block;
+            }
+        }
+    }
+}
+
+// 4. SECCIONES PRINCIPALES
+main {
+    max-width: 900px;
+    margin: 0 auto; // Centrado horizontal
+    padding: 20px;
+}
+
+section {
+    padding: 40px 0;
+
+    h2 {
+        color: $color-primario;
+        margin-bottom: 20px;
+        border-bottom: 2px solid $color-fondo-gris;
+        display: inline-block;
+    }
+}
+
+// 5. SOBRE MÍ
+#sobre-mi {
+    h3 {
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    p {
+        text-align: justify;
+        background: $color-fondo-gris;
+        padding: 20px;
+        border-radius: 15px; // Bordes redondeados
+    }
+}
+
+// 6. PROYECTOS (Grid sencillo)
+#proyectos {
+    ul {
+        list-style: none;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr); // 3 columnas fijas
+        gap: 20px;
+
+        li {
+            .project-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover; // Ajusta la imagen sin deformarla
+                margin-bottom: 10px;
+                box-shadow: $sombra-suave;
+                border-radius: 10px;
+            }
+
+            a {
+                display: block;
+                padding: 20px;
+                background: $color-primario;
+                color: $color-blanco;
+                text-decoration: none;
+                text-align: center;
+                border-radius: 10px;
+                font-weight: bold;
+                transition: 0.3s;
+                box-shadow: $sombra-suave;
 
 
+                &:hover {
+                    background: $color-secundario;
+                    transform: translateY(-3px);
+                }
+            }
+        }
+    }
+}
+
+// 7. FORMULARIO DE CONTACTO
+#contacto {
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background: $color-fondo-gris;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: $sombra-suave;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            input,
+            textarea {
+                padding: 12px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                font-family: inherit;
+            }
+        }
+
+        button {
+            background-color: $color-primario;
+            color: $color-blanco;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-secundario;
+            }
+        }
+    }
+}
+
+// 8. FOOTER
+footer {
+    background-color: $color-secundario;
+    color: $color-blanco;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+
+#btn-cambiar {
+    // 1. Modelo de Caja (Padding y Margen)
+    padding: 12px 25px;
+    margin-top: 20px;
+
+    // 2. Estética
+    background-color: $color-primario;
+    color: $color-blanco;
+    border: none;
+    border-radius: 50px; // Requisito: Bordes muy redondeados (estilo cápsula)
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+
+    // 3. Efectos Visuales (Sombras y Transiciones)
+    box-shadow: $sombra-suave; // Requisito: Sombra
+    transition: all 0.3s ease; // Para que el cambio de color sea suave
+
+    // 4. Hover (Requisito Tarea 4)
+    &:hover {
+        background-color: $color-btn-hover;
+        transform: translateY(-2px); // Pequeño salto hacia arriba
+        box-shadow: $sombra-suave;
+    }
+
+    // 5. Efecto al hacer clic (Active)
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+// Estilo para el contenedor de información extra que aparece con JS
+#info-extra {
+    background-color: rgba(140, 26, 246, 0.05); // Un morado muy tenue
+    border-left: 4px solid $color-primario;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease; // Animación de entrada
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px; // Reducimos espacio lateral
+    }
+
+    #proyectos ul {
+        grid-template-columns: repeat(2, 1fr); // Requisito: 2 columnas
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 1rem;
+        
+        nav .menu-list {
+            flex-direction: column; // Requisito: Menú en columna
+            width: 100%;
+            align-items: center;
+            
+            li {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
             }
         }
     }
 
+    #proyectos ul {
+        grid-template-columns: 1fr; // Requisito: 1 sola columna
+    }
 
-}
+    // Ajuste de imágenes para móviles
+    .project-img {
+        height: 140px; 
+    }
 
-hr {
-    margin: 0px;
-}
-
-.menu-checkbox {
-    display: none; // Escondemos el checkbox real
-}
-
-.menu-list {
-    display: none; // El menú está oculto por defecto
-    list-style: none;
-    background-color: #f4f4f4;
-    padding: 10px;
-}
-
-// "Cuando el checkbox esté marcado (+), el hermano .menu-list se muestra"
-.menu-checkbox:checked+.menu-button+.menu-list {
-    display: block;
-}
-
-.menu-button {
-    cursor: pointer;
-    background: #333;
-    color: white;
-    border-radius: 10px;
-    padding: 10px 20px;
-    display: inline-block;
+    #sobre-mi p {
+        text-align: left; // Más legible en pantallas angostas
+    }
 }

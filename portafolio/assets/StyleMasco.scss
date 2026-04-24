@@ -1,0 +1,139 @@
+// 1. Variables para mantener la armonía con tu index
+$color-principal: #8C1AF6; // Morado Riwi
+$color-fondo: #f9f9f9;
+$color-texto: #333;
+$blanco: #ffffff;
+$sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+// 2. Configuración Global (Modelo de Caja)
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: $color-fondo;
+    color: $color-texto;
+    line-height: 1.6;
+}
+
+// 3. Header y Navegación
+header {
+    background-color: $color-principal;
+    color: $blanco;
+    padding: 2rem;
+    text-align: center;
+
+    nav ul {
+        list-style: none;
+        margin-top: 10px;
+
+        li a {
+            color: $blanco;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+
+            // Requisito: Hover en enlaces
+            &:hover {
+                background-color: $blanco;
+                color: $color-principal;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+// 4. Galería (Sección Principal)
+.gallery {
+    padding: 40px 10%;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 30px;
+        color: $color-principal;
+    }
+}
+
+// 5. Grid de Mascotas (Uso de Flexbox para organizar)
+.pet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 columnas fijas
+    gap: 20px; // Espaciado entre tarjetas
+}
+
+// 6. Tarjeta de Mascota (Modelo de caja y Estilos visuales)
+.pet-card {
+    background-color: $blanco;
+    width: 100%;
+    border-radius: 15px; // Requisito: Bordes redondeados
+    box-shadow: $sombra; // Requisito: Sombra
+    overflow: hidden; // Para que la imagen no se salga de los bordes redondeados
+    padding-bottom: 20px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px); // Efecto visual al pasar el mouse
+        box-shadow: 0 8px 20px rgba(140, 26, 246, 0.2);
+    }
+
+    .pet-img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover; // Ajusta la imagen sin deformarla
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        margin: 10px 0;
+        color: $color-principal;
+    }
+
+    p {
+        padding: 0 15px;
+        font-size: 0.95rem;
+    }
+}
+
+// 7. Footer
+footer {
+    background-color: $color-texto;
+    color: $blanco;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px; // Reducimos espacio lateral
+    }
+
+    .pet-grid {
+        grid-template-columns: repeat(2, 1fr); // Requisito: 3 columnas (ajustadas)
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 1rem;
+    }
+
+    .pet-grid {
+        grid-template-columns: 1fr; // Requisito: 2 columnas en galería
+        gap: 10px;
+    }
+
+    // Ajuste de imágenes para móviles
+    .pet-card .pet-img {
+        height: 140px;
+    }
+}

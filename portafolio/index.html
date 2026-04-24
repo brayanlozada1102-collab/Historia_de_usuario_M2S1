@@ -1,25 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets\style.css">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets\style.css" />
+    <title>Brayan Lozada</title>
 </head>
 
 <body>
     <header>
-        <h1>
-            Brayan David Lozada Chaparro
-        </h1>
+        <h1>Brayan David Lozada Chaparro</h1>
         <nav>
             <div class="menu-container">
-                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+                <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
 
-                <label for="menu-toggle" class="menu-button">
-                    ☰ Menú
-                </label>
+                <label for="menu-toggle" class="menu-button"> ☰ Menú </label>
 
                 <ul class="menu-list">
                     <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -29,32 +25,51 @@
             </div>
         </nav>
     </header>
-    <hr>
+    <hr />
 
     <main>
         <section id="sobre-mi">
             <h2>Sobre mí</h2>
             <h3>​Ingeniero Civil | Desarrollador Software</h3>
-            <p>
-                ​Mi trayectoria se basa en la disciplina y el pensamiento lógico. Gracias a mi enfoque y rendimiento
-                académico, cursé mi carrera de Ingeniería Civil completamente becado, una experiencia que consolidó mi
-                capacidad para resolver problemas complejos y gestionar proyectos con precisión.
-                ​Mi mayor fortaleza es la agilidad para adquirir y transmitir información. Me capacito en nuevas
-                tecnologías en tiempo récord y tengo la habilidad de explicar conceptos técnicos de forma clara y
-                accesible. Actualmente, aplico este "superpoder" en el desarrollo de software, donde trabajo con un
-                stack centrado en Python para la lógica, y HTML, CSS (Sass) y JavaScript para crear interfaces
+            <p id="parrafo-bio">
+                ​Mi trayectoria se basa en la disciplina y el pensamiento lógico.
+                Gracias a mi enfoque y rendimiento académico, cursé mi carrera de
+                Ingeniería Civil completamente becado, una experiencia que consolidó
+                mi capacidad para resolver problemas complejos y gestionar proyectos
+                con precisión. ​Mi mayor fortaleza es la agilidad para adquirir y
+                transmitir información. Me capacito en nuevas tecnologías en tiempo
+                récord y tengo la habilidad de explicar conceptos técnicos de forma
+                clara y accesible. Actualmente, aplico este "superpoder" en el
+                desarrollo de software, donde trabajo con un stack centrado en Python
+                para la lógica, y HTML, CSS (Sass) y JavaScript para crear interfaces
                 funcionales y bien estructuradas.
-                ​Fuera del entorno técnico, busco el equilibrio a través del basketball y el ejercicio, disfruto de un
-                buen café y siempre dedico tiempo a la lectura, convencido de que el aprendizaje nunca termina.
             </p>
+            <button id="btn-cambiar">Ver más sobre mi perfil</button>
+
+            <div id="info-extra" style="display: none; margin-top: 10px">
+                <p>​Fuera del entorno técnico, busco el
+                    equilibrio a través del basketball y el ejercicio, disfruto de un buen
+                    café y siempre dedico tiempo a la lectura, convencido de que el
+                    aprendizaje nunca termina.</p>
+            </div>
         </section>
 
         <section id="proyectos">
             <h2>Proyectos</h2>
             <ul>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
+                <li>
+                    <img src="images/html.png" alt="" class="project-img" />
+                    <a href="https://github.com/brayanlozada1102-collab/pagina_html_riwi.git">Pagina de Riwi</a>
+                </li>
+                <li>
+                    <img src="images/python.png" alt="" class="project-img" />
+                    <a href="https://github.com/brayanlozada1102-collab/Prueba_de_Desempe-o_M-dulo_1_Python.git">Students
+                        Management System</a>
+                </li>
+                <li>
+                    <img src="images/devo.png" alt="" class="project-img" />
+                    <a href="https://github.com/brayanlozada1102-collab/About-me.git">About me Github</a>
+                </li>
             </ul>
         </section>
 
@@ -63,11 +78,11 @@
             <form action="#" method="POST">
                 <div>
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <input type="text" id="nombre" name="nombre" required />
                 </div>
                 <div>
                     <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required />
                 </div>
                 <div>
                     <label for="mensaje">Mensaje:</label>
@@ -82,5 +97,6 @@
         <p>&copy; 2026 - Todos los derechos reservados.</p>
     </footer>
 </body>
+<script src="assets/js/scripts.js"></script>
 
 </html>
